@@ -117,6 +117,12 @@ namespace ToDoList.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Completed()
+        {
+            return View();
+
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

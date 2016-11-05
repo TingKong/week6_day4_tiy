@@ -322,6 +322,7 @@
     <Content Include="Views\IDLists\Details.cshtml" />
     <Content Include="Views\IDLists\Edit.cshtml" />
     <Content Include="Views\IDLists\Index.cshtml" />
+    <Content Include="Views\TaskManagers\Completed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
