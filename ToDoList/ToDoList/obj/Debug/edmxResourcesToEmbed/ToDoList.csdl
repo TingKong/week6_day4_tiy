@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ToDoListModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TaskManager">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CompletionDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="IDLists" Relationship="Self.FK_IDList_TaskManager" FromRole="TaskManager" ToRole="IDList" />
+  </EntityType>
+  <EntityType Name="IDList">
+    <Key>
+      <PropertyRef Name="TaskManagerID" />
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="TaskManagerID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TaskManager" Relationship="Self.FK_IDList_TaskManager" FromRole="IDList" ToRole="TaskManager" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_IDList_TaskManager">
+    <End Role="TaskManager" Type="Self.TaskManager" Multiplicity="1" />
+    <End Role="IDList" Type="Self.IDList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskManager">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="IDList">
+        <PropertyRef Name="TaskManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ToDoListEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TaskManagers" EntityType="Self.TaskManager" />
+    <EntitySet Name="IDLists" EntityType="Self.IDList" />
+    <AssociationSet Name="FK_IDList_TaskManager" Association="Self.FK_IDList_TaskManager">
+      <End Role="TaskManager" EntitySet="TaskManagers" />
+      <End Role="IDList" EntitySet="IDLists" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="ToDoListModel.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>
