@@ -198,6 +198,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DueDateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IDListsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -209,6 +210,7 @@
       <DependentUpon>ToDoList.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DueDate.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -323,6 +325,7 @@
     <Content Include="Views\IDLists\Edit.cshtml" />
     <Content Include="Views\IDLists\Index.cshtml" />
     <Content Include="Views\TaskManagers\Completed.cshtml" />
+    <Content Include="Views\DueDate\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
