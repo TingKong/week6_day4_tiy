@@ -14,7 +14,7 @@ namespace ToDoList.Models
 
 
 
-            [DisplayName("Due Today")]
+            [DisplayName("Due Date")]
             //[PlaceHolder("01/01/2016")]
             [Required(ErrorMessage = "You must enter a rental date")]
             [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]

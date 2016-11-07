@@ -328,6 +328,8 @@
     <Content Include="Views\DueDate\Index.cshtml" />
     <Content Include="Views\TaskManagers\Completed_today.cshtml" />
     <Content Include="Views\TaskManagers\CompletedAll.cshtml" />
+    <Content Include="Views\DueDate\DueTom.cshtml" />
+    <Content Include="Views\DueDate\DueToday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
