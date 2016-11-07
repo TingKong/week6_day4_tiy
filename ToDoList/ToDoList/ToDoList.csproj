@@ -324,8 +324,10 @@
     <Content Include="Views\IDLists\Details.cshtml" />
     <Content Include="Views\IDLists\Edit.cshtml" />
     <Content Include="Views\IDLists\Index.cshtml" />
-    <Content Include="Views\TaskManagers\Completed.cshtml" />
+    <Content Include="Views\TaskManagers\Completed_tom.cshtml" />
     <Content Include="Views\DueDate\Index.cshtml" />
+    <Content Include="Views\TaskManagers\Completed_today.cshtml" />
+    <Content Include="Views\TaskManagers\CompletedAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

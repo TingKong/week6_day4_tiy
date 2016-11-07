@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Completed_today";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Completed</h2>
+
+@{
+    ToDoListEntities db = new ToDoListEntities();
+
+    DateTime tom = DateTime.Today.AddDays(1);
+
+    var compDate = from b in db.TaskManagers
+
+
+                   where  b.CompletionDate == tom
+
+                   select new
+                   {
+                       cn = b.CompletionDate,
+                       de = b.Description,
+                       nm = b.Title
+
+                   };
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Completion Date</th>
+
+        </tr>
+        @foreach (var doneD in compDate)
+        {
+        <tr>
+
+            <td>@string.Format("{0:MM/dd/yyyy}", doneD.nm)</td>
+            <td>@string.Format("{0:MM/dd/yyyy}", doneD.de)</td>
+            <td>@string.Format("{0:MM/dd/yyyy}", doneD.cn)</td>
+
+
+
+
+
+
+        </tr>
+    }
+
+    </table>
+}

@@ -117,7 +117,19 @@ namespace ToDoList.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Completed()
+        public ActionResult Completed_tom()
+        {
+            return View();
+
+        }
+
+        public ActionResult Completed_today()
+        {
+            return View();
+
+        }
+
+        public ActionResult CompletedAll()
         {
             return View();
 
