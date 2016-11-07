@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ToDoList.Models.TaskDate>
+
+@{
+    ViewBag.Title = "DueToday";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tasks Due Today</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dueDateDisplay.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taskDue)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.dueDateDisplay.Title)</td>
+            <td>@Html.DisplayFor(modelItem => item.taskDue)</td>
+        </tr>
+    }
+</table>
+
+
+
+

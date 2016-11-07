@@ -17,13 +17,28 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("To Do List", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <!--<li>@Html.ActionLink("Home", "Index", "Home")</li>-->
-                    <li>@Html.ActionLink("Create", "Create", "TaskManagers")</li>
-                    <li>@Html.ActionLink("Tasks", "Index", "TaskManagers")</li>
+                <ul class="nav navbar-nav dropdown">
+                    <li>@Html.ActionLink("Create", "Create", "TaskManagers")
+                        
+                    </li>
+                    <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" src="TaskManager/Index.html">Tasks <b class="caret"></b></a>
+                    
+                        <ul class="dropdown-menu">
+                            <li><a href="/TaskDate/DueToday">Due Today</a></li>
+                            <li><a href="/TaskManagers/Completed_Today">Completed Today</a></li>
+                            <li><a href="/TaskDate/DueToday">Due Tomorrow</a></li>
+                            <li><a href="/TaskManagers/Completed_tom">Completed Tomorrow</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/TaskManagers/index">View All Tasks</a></li>
+         
+
+                        </ul>
+                    </li>
+                        
                     <li>@Html.ActionLink("Talk To Us", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
