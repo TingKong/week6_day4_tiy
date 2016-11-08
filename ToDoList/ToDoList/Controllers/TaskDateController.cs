@@ -20,6 +20,7 @@ namespace ToDoList.Controllers
                           {
                               dueDateDisplay = a,
                               taskDue = a.DueDate
+
                           };
 
 
@@ -30,7 +31,24 @@ namespace ToDoList.Controllers
         {
             DateTime tom = DateTime.Today.AddDays(1);
             var dueDate = from a in db.TaskManagers
-                          where a.DueDate == tom
+                          where a.DueDate == tom && a.CompletionDate == tom
+                          select new ToDoList.Models.TaskDate
+                          {
+                              dueDateDisplay = a,
+                              taskDue = a.DueDate,
+                              completedTask = a.CompletionDate
+
+                          };
+
+
+            return View(dueDate);
+
+        }
+        public ActionResult DueTomIncomp()
+        {
+            DateTime tom = DateTime.Today.AddDays(1);
+            var dueDate = from a in db.TaskManagers
+                          where a.DueDate == tom && a.CompletionDate == null
                           select new ToDoList.Models.TaskDate
                           {
                               dueDateDisplay = a,
@@ -46,7 +64,24 @@ namespace ToDoList.Controllers
         {
             DateTime DueToday = DateTime.Today;
             var dueDate = from a in db.TaskManagers
-                          where a.DueDate == DueToday
+                          where a.DueDate == DueToday && a.CompletionDate == DueToday
+                          select new ToDoList.Models.TaskDate
+                          {
+                              dueDateDisplay = a,
+                              taskDue = a.DueDate,
+                              completedTask = a.CompletionDate
+                          };
+
+
+            return View(dueDate);
+
+        }
+
+        public ActionResult DueTodayIncomp()
+        {
+            DateTime DueToday = DateTime.Today;
+            var dueDate = from a in db.TaskManagers
+                          where a.DueDate == DueToday && a.CompletionDate == null
                           select new ToDoList.Models.TaskDate
                           {
                               dueDateDisplay = a,
@@ -57,8 +92,45 @@ namespace ToDoList.Controllers
             return View(dueDate);
 
         }
+        public ActionResult AllDueToday()
+        {
+            DateTime DueToday = DateTime.Today;
+            var dueDate = from a in db.TaskManagers
+                          where a.DueDate == DueToday
+                          select new ToDoList.Models.TaskDate
+                          {
+                              dueDateDisplay = a,
+                              taskDue = a.DueDate,
+                              completedTask = a.CompletionDate
 
-       
+                          };
+
+
+            return View(dueDate);
+
+        }
+
+        public ActionResult AllDueTom()
+        {
+            DateTime tom = DateTime.Today.AddDays(1);
+            var dueDate = from a in db.TaskManagers
+                          where a.DueDate == tom
+            select new ToDoList.Models.TaskDate
+                          {
+                              dueDateDisplay = a,
+                              taskDue = a.DueDate,
+                              completedTask = a.CompletionDate
+
+                          };
+
+
+            return View(dueDate);
+
+        }
+
+
+
+
 
 
     }

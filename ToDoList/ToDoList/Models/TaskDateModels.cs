@@ -20,10 +20,17 @@ namespace ToDoList.Models
             [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public System.DateTime taskDue { get; set; }
 
-            ToDoListEntities db = new ToDoListEntities();
+
+        [DisplayName("Completed Date")]
+        //[PlaceHolder("01/01/2016")]
+        [Required(ErrorMessage = "You must enter a rental date")]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        public System.DateTime? completedTask { get; set; }
+
+        ToDoListEntities db = new ToDoListEntities();
 
 
 
-        
+
     }
 }

@@ -1,11 +1,14 @@
-﻿@model IEnumerable<ToDoList.Models.TaskDate>
+﻿
+@model IEnumerable<ToDoList.Models.TaskDate>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "DueTomIncomp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+
+<h2>Incomplete Tasks Dued Tomorrow</h2>
+
 
 <table class="table">
     <tr>
@@ -24,3 +27,5 @@
         </tr>
     }
 </table>
+
+

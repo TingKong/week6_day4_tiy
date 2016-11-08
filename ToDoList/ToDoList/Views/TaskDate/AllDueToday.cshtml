@@ -1,17 +1,19 @@
 ﻿@model IEnumerable<ToDoList.Models.TaskDate>
 
 @{
-    ViewBag.Title = "DueToday";
+    ViewBag.Title = "AllDueToday";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Tasks Completed and Dued Today</h2>
-
+<h2>All Task Due Today</h2>
 
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.dueDateDisplay.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dueDateDisplay.Description)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.taskDue)

@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<ToDoList.Models.TaskDate>
 
 @{
-    ViewBag.Title = "DueTom";
+    ViewBag.Title = "DueToday";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Tasks Dued Tomorrow</h2>
+<h2>Tasks Completed and Dued Tomorrow</h2>
 
 
 <table class="table">
@@ -16,13 +16,19 @@
         <th>
             @Html.DisplayNameFor(model => model.taskDue)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.completedTask)
+        </th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <td>@Html.DisplayFor(modelItem => item.dueDateDisplay.Title)</td>
             <td>@Html.DisplayFor(modelItem => item.taskDue)</td>
+            <td>@Html.DisplayFor(modelItem => item.completedTask)</td>
+
         </tr>
     }
 </table>
+
 

@@ -325,12 +325,15 @@
     <Content Include="Views\IDLists\Edit.cshtml" />
     <Content Include="Views\IDLists\Index.cshtml" />
     <Content Include="Views\TaskManagers\Completed_tom.cshtml" />
-    <Content Include="Views\DueDate\Index.cshtml" />
     <Content Include="Views\TaskManagers\Completed_today.cshtml" />
     <Content Include="Views\TaskManagers\CompletedAll.cshtml" />
     <Content Include="Views\TaskDate\DueTom.cshtml" />
     <Content Include="Views\TaskDate\DueToday.cshtml" />
     <Content Include="Views\TaskDate\Index.cshtml" />
+    <Content Include="Views\TaskDate\DueTodayIncomp.cshtml" />
+    <Content Include="Views\TaskDate\DueTomIncomp.cshtml" />
+    <Content Include="Views\TaskDate\AllDueToday.cshtml" />
+    <Content Include="Views\TaskDate\AllDueTom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
